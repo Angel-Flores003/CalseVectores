@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588ebb867a9dfb34c9203dc12e51ac8a, type: 3}
+  m_Name: EnemyData2 1
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData2
+  enemyName: Juan
+  maxHealth: 1
+  damage: 1
+  speed: 1
+  color: {r: 0.4339623, g: 0.07164471, b: 0.36852527, a: 1}
