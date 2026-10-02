@@ -9,6 +9,7 @@ public class SmartTurret : MonoBehaviour
 	public float visionRange = 10000f;
 	public float bulletSpeed = 10f;
 	public float timeBetweenShots = 1f;
+
 	private float shootTimer = 0f;
 
 	void Update()
@@ -23,8 +24,8 @@ public class SmartTurret : MonoBehaviour
 			float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
 			transform.eulerAngles = new Vector3(0f, 0f, angle);
 
-			// Time per shoot
-			shootTimer += Time.deltaTime;
+            // Time per shoot
+            shootTimer += Time.deltaTime;
 			if (shootTimer >= timeBetweenShots)
 			{
 				Shoot(direction);
@@ -35,10 +36,9 @@ public class SmartTurret : MonoBehaviour
 	void Shoot(Vector2 directon)
 	{
 		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+		Rigidbody2D bulletrb = bullet.GetComponent<Rigidbody2D>();
+		bulletrb.linearVelocity = directon * bulletSpeed;
 
-		Rigidbody2D bulletrb;
-		bulletrb = bullet.GetComponent<Rigidbody2D>();
-
-		Destroy(bullet, 3f);
+        Destroy(bullet, 3f);
 	}
 }
